@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laptop & Mobile Accessories Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Site logo">TechDepot</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="openCart" class="cart-btn" aria-label="Open cart">Cart</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Premium Laptop & Mobile Accessories</h1>
+      <p>Find the perfect gear to complement your devices. Fast shipping. Great prices.</p>
+      <a href="#products" class="btn-primary">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="filters" class="container filters" aria-label="Product filters">
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search products..." />
+    </div>
+    <div class="filter-controls">
+      <select id="brandFilter" aria-label="Brand filter">
+        <option value="">All brands</option>
+        <option>LogiTech</option>
+        <option>Anker</option>
+        <option>Samsung</option>
+        <option>Apple</option>
+      </select>
+      <select id="typeFilter" aria-label="Type filter">
+        <option value="">All types</option>
+        <option>Laptop Bags</option>
+        <option>Chargers</option>
+        <option>Headphones</option>
+        <option>USB-C Hubs</option>
+      </select>
+      <button id="clearFilters" class="btn-secondary">Clear</button>
+    </div>
+  </section>
+
+  <main id="products" class="container product-grid" aria-label="Product grid">
+    <!-- Cards will be injected by JS -->
+  </main>
+
+  <section id="about" class="container about">
+    <h2>About TechDepot</h2>
+    <p>We curate high-quality laptop and mobile accessories from trusted brands. Our mission is to enhance your tech setup with stylish, durable gear.</p>
+  </section>
+
+  <section id="contact" class="container contact" aria-label="Contact section">
+    <h2>Contact Us</h2>
+    <form id="contactForm" class="contact-form" novalidate>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 TechDepot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-label="Cart">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="drawer-content" id="cartItems">
+      <!-- Cart items injected by JS -->
+    </div>
+    <div class="drawer-footer" aria-live="polite">
+      <div class="summary">
+        <span>Subtotal</span>
+        <strong id="subtotalDisplay">$0.00</strong>
+      </div>
+      <button class="btn-primary" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <template id="productCardTemplate">
+    <article class="card" data-id="">
+      <div class="card-media">
+        <img src="" alt="" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"></h4>
+        <p class="card-desc"></p>
+        <div class="price-row">
+          <span class="price"></span>
+          <button class="btn-add" aria-label="Add to cart">Add</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <template id="productModalTemplate">
+    <div class="modal-overlay" aria-hidden="true">
+      <div class="modal" role="dialog" aria-label="Product details">
+        <button class="modal-close" aria-label="Close details">✕</button>
+        <div class="modal-content">
+          <div class="modal-media">
+            <img src="" alt="" />
+          </div>
+          <div class="modal-info">
+            <h3 class="modal-title"></h3>
+            <p class="modal-desc"></p>
+            <div class="modal-price" aria-label="Price"></div>
+            <div class="modal-actions">
+              <button class="btn-secondary" id="modalClose">Close</button>
+              <button class="btn-primary" id="modalAdd">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
